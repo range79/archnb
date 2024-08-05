@@ -22,7 +22,7 @@ Bu script, Arch Linux sisteminizi yeni başlayanlar için bazı uygulamalarla do
 
 3. **Script'i çalıştırın:**
     ```bash
-    sudo bash install.sh
+    sudo bash arch.sh
     ```
 
 ## Script Açıklaması
