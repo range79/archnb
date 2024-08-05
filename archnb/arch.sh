@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 RED='\033[31m'
 RESET='\033[0m'
 
@@ -12,9 +14,9 @@ _________________________________
 |         başlayanlar için      |
 |             script            | 
 |                               | 
-|           version 1.0         | 
-|       github: ${RED}@range79${RESET}       |
-|       telegram: ${RED}@Onlyrange${RESET}   |
+|           version 1.0.1       | 
+|       github: ${RED}@range79${RESET}        |
+|       telegram: ${RED}@Onlyrange${RESET}    |
 |                               |
 |                               |
 |_______________________________|
@@ -62,16 +64,23 @@ fi
 echo "$SUDO_PASSWORD" | sudo -S pacman -S fzf --noconfirm
 
 if [ "$NAME" = "Arch Linux" ]; then
-    SELECTION=$(echo -e "Yay Paket Yöneticisi\nAnydesk\nWhatsapp\nDiscord\n" | fzf --multi --prompt="Arch'inize ne yüklemek istersiniz? Bir veya daha fazla işlem seçin (Tab tuşuyla seçim yapılıyor): ")
+    SELECTION=$(echo -e "Yay\nAnydesk\nWhatsapp\nDiscord\n" | fzf --multi --prompt="Arch'inize ne yüklemek istersiniz? Bir veya daha fazla işlem seçin (Tab tuşuyla seçim yapılıyor): ")
 
     for OPTION in $SELECTION; do
         case $OPTION in
-            "Yay Paket Yöneticisi")
+            "Yay")
                 echo "Yay Paket Yöneticisi kurulumu başlayacak..."
+                whoami = benim
+            cd /home/${benim}
+        
                 echo "$SUDO_PASSWORD" | sudo -S git clone https://aur.archlinux.org/yay.git
-                cd yay || { echo "Yay dizinine geçiş başarısız!"; exit 1; }
-                makepkg -si --noconfirm
-                cd ..
+         
+          chmod u+rwx /home/yay
+
+
+              cd yay || { echo "Yay dizinine geçiş başarısız!"; exit 1; }
+              makepkg -si --noconfirm
+            
                 ;;
             "Anydesk")
                 echo "Anydesk kurulumu başlayacak..."
