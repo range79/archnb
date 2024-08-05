@@ -46,6 +46,8 @@ Script çalıştırıldığında aşağıdaki adımları takip eder:
 Bu script [MIT Lisansı](https://opensource.org/licenses/MIT) altında lisanslanmıştır.
 
 
+
+
 ## sürüm değişiklik günlüğü
 **1.0** - bu benim ilk versiyonum olduğu için daha fazla uygulama eklemedim
 Gelecek sürümlerde ek uygulamalar ekleyeceğim
