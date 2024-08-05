@@ -41,10 +41,6 @@ Script çalıştırıldığında aşağıdaki adımları takip eder:
 - **`sudo`** yetkileri.
 - **`git`** ve **`flatpak`** kurulu olmalıdır.
 
-## Lisans
-
-Bu script [MIT Lisansı](https://opensource.org/licenses/MIT) altında lisanslanmıştır.
-
 
 
 
@@ -59,3 +55,12 @@ Gelecek sürümlerde ek uygulamalar ekleyeceğim
 
 - **GitHub:** [@range79](https://github.com/range79)
 - **Telegram:** [@Onlyrange](https://t.me/Onlyrange)
+
+
+
+
+## Lisans
+
+Bu script [MIT Lisansı](https://opensource.org/licenses/MIT) altında lisanslanmıştır.
+
+
