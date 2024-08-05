@@ -24,6 +24,7 @@ echo "Scripti başlatmak ister misiniz? (E/H)"
 read -r Soz
 if [ "$Soz" = "E" ] || [ "$Soz" = "e" ]; then 
     echo "Script başlıyor"
+   
     # alttan devam etsin
 elif [ "$Soz" = "H" ] || [ "$Soz" = "h" ]; then 
     echo "Script başlamadı"
@@ -50,6 +51,7 @@ fi
 
 echo "Sudo şifrenizi girin:"
 read -s SUDO_PASSWORD
+echo "$SUDO_PASSWORD" | sudo -S pacman -S fzf --noconfirm
 
 echo "$SUDO_PASSWORD" | sudo -S true 2>/dev/null
 if [ $? -ne 0 ]; then
