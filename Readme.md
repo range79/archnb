@@ -2,11 +2,6 @@
 
 Bu script, Arch Linux sisteminizi yeni başlayanlar için bazı uygulamalarla donatmayı amaçlayan bir araçtır. Script, Arch Linux tabanlı sistemlerde yaygın olarak kullanılan yazılımların kurulumunu otomatikleştirir.
 
-## Özellikler
-
-- **Yay Paket Yöneticisi Kurulumu:** Script, `yay` paket yöneticisini sisteminize kurar. `yay`, Arch Linux tabanlı dağıtımlarda AUR (Arch User Repository) paketlerini yönetmenizi sağlar.
-- **Anydesk Kurulumu:** `flatpak` ile Anydesk kurulumu sağlar.
-- **Whatsapp Kurulumu:** `flatpak` ile Whatsapp kurulumu sağlar.
 
 ## Kullanım
 
