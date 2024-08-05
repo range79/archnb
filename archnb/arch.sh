@@ -1,33 +1,31 @@
 #!/bin/bash
 
-
 RED='\033[31m'
 RESET='\033[0m'
-
 
 echo -e "
 _________________________________
 |                               | 
 |                               |
 |                               | 
-|         arch linuxa yeni      | 
-|         basliyanlar icin      |
+|         Arch Linux'a yeni     | 
+|         başlayanlar için      |
 |             script            | 
 |                               | 
 |           version 1.0         | 
-|       github:${RED} @range79 ${RESET}       |
-|       telegram: ${RED}@Onlyrange ${RESET}   |
+|       github: ${RED}@range79${RESET}       |
+|       telegram: ${RED}@Onlyrange${RESET}   |
 |                               |
 |                               |
 |_______________________________|
 "
 
-echo "scripti baslatmak istermisiniz(E/H)"
-read soz
-if[ "$soz" = "E"|"e" ]; then
-if [ "$soz" = "E" ] || [ "$soz" = "e" ]; then
+echo "Scripti başlatmak ister misiniz? (E/H)"
+read -r Soz
+if [ "$Soz" = "E" ] || [ "$Soz" = "e" ]; then 
     echo "Script başlıyor"
-elif [ "$soz" = "H" ] || [ "$soz" = "h" ]; then
+    # alttan devam etsin
+elif [ "$Soz" = "H" ] || [ "$Soz" = "h" ]; then 
     echo "Script başlamadı"
     sleep 2
     exit 1
@@ -37,22 +35,18 @@ else
     exit 1
 fi
 
-
-
-
 sleep 1
 
-for n in {3..1}
-do
-echo "$n"
-sleep 1
+for n in {3..1}; do
+    echo "$n"
+    sleep 1
 done
 clear
-if [ -f /etc/os-release ]; then
 
+if [ -f /etc/os-release ]; then
     . /etc/os-release
     DISTRO_NAME="$NAME"
-    fi
+fi
 
 echo "Sudo şifrenizi girin:"
 read -s SUDO_PASSWORD
@@ -62,52 +56,40 @@ if [ $? -ne 0 ]; then
     echo "Geçersiz şifre!"
     exit 1
 fi
- echo "$SUDO_PASSWORD" | sudo pacman -S fzf -y
 
+echo "$SUDO_PASSWORD" | sudo -S pacman -S fzf --noconfirm
 
-if [ "$NAME" = "Arch Linux" ] ;then
+if [ "$NAME" = "Arch Linux" ]; then
+    SELECTION=$(echo -e "Yay Paket Yöneticisi\nAnydesk\nWhatsapp\nDiscord\n" | fzf --multi --prompt="Arch'inize ne yüklemek istersiniz? Bir veya daha fazla işlem seçin (Tab tuşuyla seçim yapılıyor): ")
 
+    for OPTION in $SELECTION; do
+        case $OPTION in
+            "Yay Paket Yöneticisi")
+                echo "Yay Paket Yöneticisi kurulumu başlayacak..."
+                echo "$SUDO_PASSWORD" | sudo -S git clone https://aur.archlinux.org/yay.git
+                cd yay || { echo "Yay dizinine geçiş başarısız!"; exit 1; }
+                makepkg -si --noconfirm
+                cd ..
+                ;;
+            "Anydesk")
+                echo "Anydesk kurulumu başlayacak..."
+                flatpak install anydesk -y
+                ;;
+            "Whatsapp")
+                echo "Whatsapp kurulumu başlayacak..."
+                flatpak install flathub com.github.eneshecan.WhatsAppForLinux -y
+                ;;
+            "Discord")
+                echo "Discord kurulumu başlayacak..."
+                echo "$SUDO_PASSWORD" | sudo -S pacman -S discord --noconfirm
+                ;;
+            *)
+                echo "Geçersiz seçim: $OPTION"
+                ;;
+        esac
+    done
 
-
-
-
-
-SELECTION=$(echo -e "Yay Paket Yöneticisi\nAnydesk\nWhatsapp\nDiscord\n" | fzf --multi --prompt="Archiniza ne yuklemek istersiniz.bir veya daha fazla işlem seçin(tab tusuyla secim yapiliyor): ")
-
-
-for OPTION in $SELECTION; do
-    case $OPTION in
-  
-        "Yay Paket Yöneticisi")
-            echo "Yay Paket Yöneticisi kurulumu başlayacak..."
-            echo "$SUDO_PASSWORD" | sudo -S git clone https://aur.archlinux.org/yay.git
-            cd yay || exit
-            makepkg -si
-            cd ..
-            ;;
-        "Anydesk")
-            echo "Anydesk kurulumu başlayacak..."
-          flatpak install anydesk -y
-           makepkg -si
-            ;;
-        
-        
-        "Whatsapp")
-        echo "whatsapp kurulumu baslayacak"
-        flatpak install flathub com.github.eneshecan.WhatsAppForLinux -y
-        echo "1" 
-     
-        ;;
-        
-        
-        *)
-            echo "Geçersiz seçim: $OPTION"
-            ;;
-    esac
-done
-
-echo "İşlem tamamlandı."
-
-else 
-echo "sisteminiz Arch deil"
+    echo "İşlem tamamlandı."
+else
+    echo "Sisteminiz Arch değil."
 fi
