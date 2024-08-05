@@ -45,8 +45,8 @@ Script çalıştırıldığında aşağıdaki adımları takip eder:
 
 
 ## sürüm değişiklik günlüğü
--**1.0.0** - bu benim ilk versiyonum olduğu için daha fazla uygulama eklemedim  Gelecek sürümlerde ek uygulamalar ekleyeceğim
--**1.0.1**-bu surumde yay paket yoneticisinin inmesiyle bagli buglar duzeltildi
+-**1.0.0** - bu benim ilk versiyonum olduğu için daha fazla uygulama eklemedim  Gelecek sürümlerde ek uygulamalar ekleyeceğim.
+-**1.0.1**-bu surumde yay paket yoneticisinin inmesiyle bagli buglar duzeltildi.
 
 
 
