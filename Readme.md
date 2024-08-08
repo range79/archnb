@@ -44,6 +44,7 @@ Script çalıştırıldığında aşağıdaki adımları takip eder:
 
 -**1.0.1**-bu surumde yay paket yoneticisinin inmesiyle ilgili buglar duzeltildi.
 
+-**1.0.2**-bu surumde flatpak otomatik olarak kurulucak yoksa eger 
 
 
 

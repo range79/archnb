@@ -14,7 +14,7 @@ _________________________________
 |         başlayanlar için      |
 |             script            | 
 |                               | 
-|           version 1.0.1       | 
+|           version 1.0.2       | 
 |       github: ${RED}@range79${RESET}        |
 |       telegram: ${RED}@Onlyrange${RESET}    |
 |                               |
@@ -54,7 +54,7 @@ fi
 echo "Sudo şifrenizi girin:"
 read -s SUDO_PASSWORD
 echo "$SUDO_PASSWORD" | sudo -S pacman -S fzf --noconfirm
-
+echo "$SUDO_PASSWORD" | sudo -S pacman -S flatpak -noconfirm
 echo "$SUDO_PASSWORD" | sudo -S true 2>/dev/null
 if [ $? -ne 0 ]; then
     echo "Geçersiz şifre!"
