@@ -47,6 +47,9 @@ Script çalıştırıldığında aşağıdaki adımları takip eder:
 -**1.0.2**-bu surumde flatpak otomatik olarak kurulucak yoksa eger 
 
 
+-**1.1.0**-bu surumde Vscode,modlu discord clienti eklendi yay paket yöneticisi manuel deil otomatik kuruluyor artik
+
+
 
 ## İletişim
 
