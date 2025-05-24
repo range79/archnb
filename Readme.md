@@ -1,66 +1,75 @@
 # Arch Linux Başlangıç Scripti
 
-Bu script, Arch Linux sisteminizi yeni başlayanlar için bazı uygulamalarla donatmayı amaçlayan bir araçtır. Script, Arch Linux tabanlı sistemlerde yaygın olarak kullanılan yazılımların kurulumunu otomatikleştirir.
-
+Bu script, Arch Linux sisteminizi yeni başlayanlar için bazı temel uygulamalarla donatmayı amaçlayan otomatik bir kurulum aracıdır. Arch Linux ve türevlerinde yaygın kullanılan yazılımların kolayca kurulmasını sağlar.
 
 ## Kullanım
 
-1. **Script'i indirin:**
+1. **Script’i indirin:**
     ```bash
     git clone https://github.com/range79/archnb.git
     ```
 
-2. **Script'in bulunduğu dizine gidin:**
+2. **Script’in bulunduğu dizine geçin:**
     ```bash
     cd archnb/archnb
     ```
 
-3. **Script'i çalıştırın:**
+3. **Script’e çalıştırma izni verin:**
     ```bash
-    bash arch.sh
+    chmod +x arch.sh
     ```
 
-## Script Açıklaması
+4. **Script’i çalıştırın:**
+    ```bash
+    ./arch.sh
+    ```
 
-Script çalıştırıldığında aşağıdaki adımları takip eder:
+## Script İşleyişi
 
-1. **Script Başlangıcı:** Kullanıcıdan script'i başlatmak isteyip istemediğini sorar.
-2. **Sudo Şifresi:** `sudo` komutları için gerekli olan şifreyi alır ve doğrular.
-3. **Yay Paket Yöneticisi Kurulumu:** `yay` paket yöneticisinin kurulumu yapar.
-4. **Uygulama Seçimi:** Kullanıcıya kurulacak uygulamaları seçme imkanı sunar ve seçilen uygulamaları kurar.
-5. **Kurulum Tamamlandı:** İşlemin tamamlandığını bildirir.
+Script çalıştırıldığında şu adımları takip eder:
+
+1. **Başlangıç Onayı:** Kullanıcıdan script’i başlatmak isteyip istemediği sorulur.  
+2. **Sudo Yetkisi:** `sudo` komutları için şifre istenir ve doğrulanır.  
+3. **Yay Paket Yöneticisi Kurulumu:** `yay` paket yöneticisi otomatik olarak kurulur.  
+4. **Uygulama Seçimi:** Kullanıcıya hangi uygulamaların kurulacağı sorulur ve seçilenler yüklenir.  
+5. **Kurulum Tamamlandı:** İşlemin başarıyla tamamlandığı kullanıcıya bildirilir.
 
 ## Gereksinimler
 
-- **Arch Linux** veya Arch tabanlı bir dağıtım.
-- **`sudo`** yetkileri.
-- **`git`** ve **`flatpak`** kurulu olmalıdır.
+- Arch Linux veya Arch tabanlı bir dağıtım.  
+- `sudo` yetkisi.  
+- `git` ve `flatpak` paketlerinin kurulu olması.
 
+## Sürüm Değişiklik Günlüğü
 
+### 1.0.0
+- İlk sürüm, temel uygulamalar eklendi.  
+- Gelecek sürümlerde yeni uygulamalar planlanıyor.
 
+### 1.0.1
+- Yay paket yöneticisi kurulumu ile ilgili hatalar giderildi.
 
-## sürüm değişiklik günlüğü
--**1.0.0** - bu benim ilk versiyonum olduğu için daha fazla uygulama eklemedim  Gelecek sürümlerde ek uygulamalar ekleyeceğim.
+### 1.0.2
+- Flatpak, sistemde yüklü değilse otomatik kurulacak.
 
--**1.0.1**-bu surumde yay paket yoneticisinin inmesiyle ilgili buglar duzeltildi.
+### 1.1.0
+- Visual Studio Code ve modlu Discord client (Vesktop) eklendi.  
+- Yay paket yöneticisi manuel kurulumdan otomatik kurulum sistemine geçildi.
 
--**1.0.2**-bu surumde flatpak otomatik olarak kurulucak yoksa eger 
-
-
--**1.1.0**-bu surumde Vscode,modlu discord clienti eklendi yay paket yöneticisi manuel deil otomatik kuruluyor artik
-
-
+### 2.0.0
+- Modlu Discord client “Vesktop” olarak adlandırıldı.  
+- Yay paket yöneticisi kurulumu ile ilgili sorunlar çözüldü.  
+- Uygulama modüler hale getirildi:  
+  - `logo.sh`: Uygulama başlangıcında gösterilen logo.  
+  - `yay_installer.sh`: Yay paket yöneticisini indirip kuran betik.  
+  - `check_distro_name`: Dağıtım ismini kontrol eder, Arch değilse script durur.  
+- Bir uygulama kurulurken hata alınsa da script tamamen durmaz, diğer kurulumlara devam eder.
 
 ## İletişim
 
-- **GitHub:** [@range79](https://github.com/range79)
+- **GitHub:** [@range79](https://github.com/range79)  
 - **Telegram:** [@Onlyrange](https://t.me/Onlyrange)
-
-
-
 
 ## Lisans
 
-Bu script [MIT Lisansı](https://opensource.org/licenses/MIT) altında lisanslanmıştır.
-
-
+Bu script [MIT Lisansı](LICENSE) ile lisanslanmıştır.
