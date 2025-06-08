@@ -11,7 +11,7 @@ Bu script, Arch Linux sisteminizi yeni başlayanlar için bazı temel uygulamala
 
 2. **Script’in bulunduğu dizine geçin:**
     ```bash
-    cd archnb/archnb
+    cd archnb/
     ```
 
 3. **Script’e çalıştırma izni verin:**
